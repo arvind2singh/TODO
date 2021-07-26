@@ -8,13 +8,12 @@ import "../App.css"
 
 
 const UserList = () => {
-
-    const [user_list1, setUserList1] = useState([]);
     const [user_list, setUserList] = useState([]);
      const [total, setTotal] = useState([]);
-     const [showPerPage, setShowPerPage] = useState();
+     const [showPerPage, setShowPerPage] = useState(6);
+     const [page, setPage] =useState(1)
     const [pagination, setPagination] = useState({
-        start: 0,
+        start: page,
         end: showPerPage,
     });
     const onPaginationChange = (start, end) => {
@@ -34,10 +33,11 @@ const UserList = () => {
           .then(res => res.json())
           .then(
             (result) => {
-                setUserList1(result.data);
+                arr=result.data;
                 setTotal(result.total)
                 setShowPerPage(result.per_page);
-                console.log("page1",result.data)
+                setPage(result.page)
+                console.log("page1",result)
             },
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
@@ -52,9 +52,10 @@ const UserList = () => {
           .then(
             (data) => {
                
-                arr =data.data;
-                console.log("page2",arr)
-                setUserList(user_list1.concat(arr));
+                var arrr= [];
+                // arrr=data.datadata.data;
+                arrr=arr.concat(data.data);
+                setUserList(arrr);
             },
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
@@ -65,6 +66,7 @@ const UserList = () => {
           )
           
       }, [])
+      console.log("page3",user_list)
       
     //   useEffect(() =>{
         
