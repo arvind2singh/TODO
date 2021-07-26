@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-const Pagination = ({ showPerPage, onPaginationChange, total }) => {
+const Pagination = (props) => {
+  var showPerPage= props.showPerPage;
+  var onPaginationChange = props.onPaginationChange;
+  var total = props.total;
   const [counter, setCounter] = useState(1);
   
   useEffect(() => {
