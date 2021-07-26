@@ -94,7 +94,7 @@ const UserList = () => {
                                                 <th className="data-serial" scope="col">{item.id}</th>
                                                     <th className="data-serial" scope="col">{item.first_name} {item.last_name}</th>
                                                     <th className="data-name" scope="col">{item.email}</th>
-                                                    <th className="data-value" scope="col">{item.avatar}</th>
+                                                    <th className="data-value" scope="col"><img height="50" width="60" src={item.avatar} /></th>
                                                     </tr>
                                                     )):""}
                                             </tbody>
