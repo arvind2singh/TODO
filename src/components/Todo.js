@@ -78,6 +78,7 @@ const Todo = () => {
         <>
             <div className="main-div">
                 <div className="child-div">
+                    <h1 className="title">Todo List</h1>
                     <div className="addItems">
                         <input type="text" placeholder="Add Items..."
                            value={inputData} 
