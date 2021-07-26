@@ -59,7 +59,6 @@ const Todo = () => {
 
 // edit the item
 //     When user clikc on edit button 
-
 // 1: get the id and name of the data which user clicked to edit
 // 2: set the toggle mode to change the submit button into edit button
 // 3: Now update the value of the setInput with the new updated value to edit. 
