@@ -1,9 +1,5 @@
 import React, {useState, useEffect} from 'react'
-//import todo from "../images/todo.svg";
 import "../App.css"
-
-
-// to get the data from LS
 
 const getLocalItmes = () => {
     let list = localStorage.getItem('lists');
@@ -47,8 +43,6 @@ const Todo = () => {
         }
     }
 
-    
-    // delete the items
     const deleteItem = (index) => {
         const updateditems = items.filter((elem) => {
             return index !== elem.id;
@@ -56,14 +50,6 @@ const Todo = () => {
 
         setItems(updateditems);
     }
-
-// edit the item
-//     When user clikc on edit button 
-// 1: get the id and name of the data which user clicked to edit
-// 2: set the toggle mode to change the submit button into edit button
-// 3: Now update the value of the setInput with the new updated value to edit. 
-// 4: To pass the current element Id to new state variable for reference 
-    
     
     const editItem = (id) => {
         let newEditItem = items.find((elem) => {
@@ -79,13 +65,11 @@ const Todo = () => {
 
     }
     
-
-    // remove all 
+ 
     const removeAll = () => {
          setItems([]);
     }
 
-    // add data to localStorage
     useEffect(() => {
        localStorage.setItem('lists', JSON.stringify(items))
     }, [items]);
@@ -124,8 +108,6 @@ const Todo = () => {
                         }
                        
                     </div>
-                
-                    {/* clear all button  */}
                     <div className="showItems">
                         <button className="btn effect04" data-sm-link-text="Remove All" onClick={removeAll}><span> CHECK LIST </span> </button>
                     </div>
